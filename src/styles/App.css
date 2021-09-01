@@ -1,0 +1,60 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 5%;
+    bottom: 5%;
+    left: 20%;
+    right: 2%;
+    background-color: rgba(201, 193, 193, 0.5);
+    border-radius: 20px;
+}
+
+header,
+footer {
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+}
+
+header {
+    flex-basis: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 4px solid rgb(167, 54, 54);
+
+}
+
+main {
+    flex-basis: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+main aside {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+main aside .menu {
+    flex-grow: 1;
+}
+
+main aside .summary {
+    flex-grow: 1;
+}
+
+main .tables {
+    flex-grow: 2;
+}
+
+footer {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 4px solid rgb(167, 54, 54);
+}

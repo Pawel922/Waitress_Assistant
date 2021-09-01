@@ -1,0 +1,23 @@
+/* https://pixabay.com/pl/photos/tabela-jedzenie-p%c5%82%c3%b3tno-z-drewna-3219660/ */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 22px;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+#root {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background-image: url("../images/table.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

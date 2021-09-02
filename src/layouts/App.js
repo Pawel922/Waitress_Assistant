@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import {BrowserRouter as Router} from 'react-router-dom'
-import Header from './Header';
 import Menu from './Menu';
 import Summary from './Summary';
 import Tables from './Tables';
-import Footer from './Footer';
 import '../styles/App.css';
 
 class App extends Component {
@@ -13,7 +11,7 @@ class App extends Component {
       <Router>
         <div className="app">
           <header>
-            {<Header/>}
+            <p>Waitress Assistant</p>
           </header>
           <main>
             <aside>
@@ -29,7 +27,7 @@ class App extends Component {
             </section>
           </main>
           <footer>
-            {<Footer/>}
+            <p dangerouslySetInnerHTML={{ "__html": "&copy; Paweł Woźniak"}}/>
           </footer>
         </div>
       </Router>

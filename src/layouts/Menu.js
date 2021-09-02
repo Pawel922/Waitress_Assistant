@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import ListItem from '../components/ListItem';
+import '../styles/Menu.css';
 
 class Menu extends React.Component {
     state = {
@@ -28,10 +29,10 @@ class Menu extends React.Component {
                 name={item.name} 
                 price={item.price}
             />)
-            
+
         return (
             <React.Fragment>
-                <ul>
+                <ul className="listItems">
                     {listItems}
                 </ul>
                 <Link to="/"><button type="button">Add</button></Link>

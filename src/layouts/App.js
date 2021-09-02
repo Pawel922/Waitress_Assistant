@@ -16,9 +16,11 @@ class App extends Component {
           <main>
             <aside>
               <div className="menu">
+                <h1>Menu</h1>
                 {<Menu/>}
               </div>
               <div className="summary">
+                <h1>Summary</h1>
                 {<Summary/>}
               </div>
             </aside>

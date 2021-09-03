@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {Link } from 'react-router-dom';
 import ListItem from '../components/ListItem';
 import '../styles/Menu.css';
 

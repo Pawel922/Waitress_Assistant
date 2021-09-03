@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router} from 'react-router-dom'
 import Menu from './Menu';
 import Summary from './Summary';
-import Tables from './Tables';
+import Panel from './Panel';
 import '../styles/App.css';
 
 class App extends Component {
@@ -24,8 +24,8 @@ class App extends Component {
                 {<Summary/>}
               </div>
             </aside>
-            <section className="tables">
-              {<Tables/>}
+            <section className="panel">
+              {<Panel/>}
             </section>
           </main>
           <footer>

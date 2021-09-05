@@ -3,11 +3,11 @@ import {Link} from 'react-router-dom';
 
 const ListItem = (props) => {
     return (
-        <li key={props.id}>
+        <li>
             <span>{props.name}</span>
             <span>{`${props.price} zł`}</span>
-            <Link to={`/edit/${props.id}`}><button type="button">Edit</button></Link>
-            <Link to={`/delete/${props.id}/${props.name}`}><button type="button">Delete</button></Link>
+            <Link to={`/edit/${props.id}`}><button>Edit</button></Link>
+            <Link to={`/menu/delete`}><button onClick={() => props.setIdToDelete(props.id)}>Delete</button></Link>
         </li>
     );
 }

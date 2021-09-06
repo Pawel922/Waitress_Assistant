@@ -70,7 +70,7 @@ class Panel extends React.Component {
                 <Route path="/menu/delete" render={() => (
                     <DeleteConfirm 
                         id={this.state.idToDelete} 
-                        name={this.state.items[this.state.idToDelete].name}
+                        item={[...[...this.state.items].filter(item => item.id === this.state.idToDelete)][0]}
                         delete={this.deleteItem}
                     />)}
                 />

@@ -20,7 +20,7 @@ const Menu = (props) => {
             <ul className="listItems">
                 {listItems}
             </ul>
-            <Link to="/"><button type="button">Add</button></Link>
+            <Link to="/menu/add"><button>Add</button></Link>
         </React.Fragment>
 
     );

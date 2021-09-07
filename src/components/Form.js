@@ -3,8 +3,8 @@ import {Link, Redirect} from 'react-router-dom';
 
 class AddForm extends React.Component {
     state = {
-        name: "",
-        price: "",
+        name: this.props.type === "add" ? "" : this.props.item.name,
+        price: this.props.type === "add" ? "" : this.props.item.price.toString(),
         valid: false,
         errors: {
             name: true,
@@ -58,7 +58,7 @@ class AddForm extends React.Component {
                 name: name,
                 price: price
             }
-            this.props.add(this.newItem)
+            this.props.type === "add" ? this.props.add(this.newItem) : this.props.edit()    
             this.setState({
                 valid: true
             })
@@ -84,7 +84,7 @@ class AddForm extends React.Component {
                         <input 
                             type="text" 
                             name="name" 
-                            value={this.state.value} 
+                            value={this.state.name} 
                             onChange={this.handleInputChange}
                         />
                         {!this.state.errors.name && <span>{this.messages.name_incorrect}</span>}
@@ -104,7 +104,7 @@ class AddForm extends React.Component {
                     </label>
                     <br/>
                     <Link to="/menu"><button>Back</button></Link>
-                    <button type="submit">Add</button>
+                    <button type="submit">{this.props.type === "add" ? "Add" : "Edit"}</button>
                 </form>
             )
         }

@@ -11,6 +11,7 @@ const Menu = (props) => {
             id={item.id} 
             name={item.name} 
             price={item.price}
+            setIdToEdit={props.setIdToEdit}
             setIdToDelete={props.setIdToDelete}
         />)
 

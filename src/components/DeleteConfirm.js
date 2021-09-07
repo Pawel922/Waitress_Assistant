@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 
 const DeleteConfirm = (props) => {
-    console.log(props)
     return (
         <React.Fragment>
             <div>Are you sure want to delete {props.item.name} ?</div>

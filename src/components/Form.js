@@ -58,7 +58,7 @@ class AddForm extends React.Component {
                 name: name,
                 price: price
             }
-            this.props.type === "add" ? this.props.add(this.newItem) : this.props.edit()    
+            this.props.type === "add" ? this.props.add(this.newItem) : this.props.edit(this.newItem)    
             this.setState({
                 valid: true
             })

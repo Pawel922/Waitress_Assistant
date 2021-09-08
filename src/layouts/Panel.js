@@ -64,8 +64,18 @@ class Panel extends React.Component {
         })
     }
 
-    editItem = () => {
-        console.log("EDIT")
+    editItem = (item) => {
+        const tempArray = [...this.state.items];
+        const itemToEdit = [...tempArray.filter(elem => elem.id === this.state.idToEdit)][0];
+        const index = tempArray.indexOf(itemToEdit);
+        tempArray[index] = {
+            id: this.state.idToEdit,
+            name: item.name,
+            price: item.price,
+        }
+        this.setState({
+            items: tempArray,
+        })
     }
 
     render() {

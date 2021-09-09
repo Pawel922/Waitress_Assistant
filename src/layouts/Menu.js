@@ -13,7 +13,8 @@ const Menu = (props) => {
             price={item.price}
             setIdToEdit={props.setIdToEdit}
             setIdToDelete={props.setIdToDelete}
-        />)
+        />
+    )
 
     return (
         

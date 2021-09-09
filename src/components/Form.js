@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
 
-class AddForm extends React.Component {
+class Form extends React.Component {
     state = {
         name: this.props.type === "add" ? "" : this.props.item.name,
         price: this.props.type === "add" ? "" : this.props.item.price.toString(),
@@ -111,4 +111,4 @@ class AddForm extends React.Component {
     }
 }
 
-export default AddForm
+export default Form

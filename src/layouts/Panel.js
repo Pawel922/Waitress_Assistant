@@ -2,6 +2,7 @@ import React from 'react';
 import {Route} from 'react-router-dom';
 import DeleteConfirm from '../components/DeleteConfirm';
 import Tables from '../components/Tables';
+import OrderForm from '../components/OrderForm';
 import Menu from '../layouts/Menu';
 import Form from "../components/Form";
 import Summary from '../layouts/Summary';
@@ -27,6 +28,7 @@ class Panel extends React.Component {
         nextAvailableId : 3,
         idToEdit: null,
         idToDelete: null,
+        idTable:null,
     }
 
     setIdToEdit = (id) => {
@@ -38,6 +40,12 @@ class Panel extends React.Component {
     setIdToDelete = (id) => {
         this.setState({
             idToDelete: id
+        })
+    }
+
+    setIdTable = (id) => {
+        this.setState({
+            idTable: id
         })
     }
 
@@ -81,7 +89,17 @@ class Panel extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Route path="/" exact component={Tables}/>
+                <Route path="/" exact render={() => (
+                    <Tables
+                        setIdTable={this.setIdTable}
+                    />)}
+                />
+                <Route path="/order" render={() => (
+                    <OrderForm
+                        id={this.state.idTable}
+                        items={this.state.items}
+                    />)}
+                />
                 <Route path="/menu" exact render={() => (
                     <Menu 
                         items={this.state.items}

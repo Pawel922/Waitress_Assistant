@@ -5,7 +5,7 @@ const ListItem = (props) => {
     return (
         <li>
             <span>{props.name}</span>
-            <span>{`${props.price} zł`}</span>
+            <span>{`${props.price} $`}</span>
             <Link to={"/menu/edit"}><button onClick={() => props.setIdToEdit(props.id)}>Edit</button></Link>
             <Link to={"/menu/delete"}><button onClick={() => props.setIdToDelete(props.id)}>Delete</button></Link>
         </li>

@@ -13,17 +13,17 @@ class Panel extends React.Component {
     state = {
         items : [{
             id:0,
-            name: 'Zupa pomidorowa',
+            name: 'Tomato soup',
             price: 12,
         },
         {
             id:1,
-            name: 'Schabowy wujka',
+            name: 'Pork schnitzel',
             price: 16,
         },
         {
             id:2,
-            name: 'Filet z mintaja',
+            name: 'Fish and chips',
             price: 12.5,
         }],
         activeOrders: [],
@@ -101,6 +101,7 @@ class Panel extends React.Component {
             <React.Fragment>
                 <Route path="/" exact render={() => (
                     <Tables
+                        activeOrders={this.state.activeOrders}
                         setIdTable={this.setIdTable}
                     />)}
                 />

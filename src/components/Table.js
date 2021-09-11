@@ -6,11 +6,11 @@ const Table = (props) => {
 
     return (
         <div className="table">
-            <h1>{`Table ${props.id + 1}`}</h1>
-            <div/>
-            <Link to="/order"><button onClick={() => props.setIdTable(props.id)}>Take order</button></Link>
-            <Link to="/order/list"><button onClick={() => props.setIdTable(props.id)}>Show order</button></Link>
-            <button>Finish order</button>
+            <h1>{`Table ${props.id}`}</h1>
+            <div className="picture"/>
+            <Link to="/order"><button onClick={() => props.setIdTable(props.id)} disabled={props.ordersExists}>Take order</button></Link>
+            <Link to="/order/list"><button disabled={!props.ordersExists} onClick={() => props.setIdTable(props.id)}>Show order</button></Link>
+            <button disabled={!props.ordersExists}>Finish order</button>
         </div>
     )
 }

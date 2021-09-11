@@ -11,7 +11,7 @@ const OrderList = (props) => {
 
     return (
         <div className="orderList">
-            <h1>Order for table {props.idTable + 1}</h1>
+            <h1>Order for table {props.idTable}</h1>
             {createOrderList()}
             <Link to="/"><button>Back</button></Link>
         </div>

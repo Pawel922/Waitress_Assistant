@@ -4,11 +4,16 @@ import '../styles/Tables.css';
 
 const Tables = (props) => {
 
-    const numOfTables = 8; 
+    const numOfTables = 4; 
+
+    const activeOrdersExists = (orders,id) => {
+        return orders.findIndex(order => order.idTable === id) > -1 ? true : false;
+    }
+
     const createTableList = () => {
         const tables = [];
-        for(let i = 0; i < numOfTables; i++) {
-            tables.push(<Table key={i} id={i} setIdTable={props.setIdTable}/>)
+        for(let i = 1; i <= numOfTables; i++) {
+            tables.push(<Table key={i} id={i} setIdTable={props.setIdTable} ordersExists={activeOrdersExists(props.activeOrders, i)}/>)
         }
         return tables;
     }

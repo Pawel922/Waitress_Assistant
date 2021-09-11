@@ -3,6 +3,7 @@ import {Route} from 'react-router-dom';
 import DeleteConfirm from '../components/DeleteConfirm';
 import Tables from '../components/Tables';
 import OrderForm from '../components/OrderForm';
+import OrderList from '../components/OrderList';
 import Menu from '../layouts/Menu';
 import Form from "../components/Form";
 import Summary from '../layouts/Summary';
@@ -103,11 +104,17 @@ class Panel extends React.Component {
                         setIdTable={this.setIdTable}
                     />)}
                 />
-                <Route path="/order" render={() => (
+                <Route path="/order" exact render={() => (
                     <OrderForm
                         idTable={this.state.idTable}
                         items={this.state.items}
                         addOrders={this.addOrders}
+                    />)}
+                />
+                <Route path="/order/list" render={() => (
+                    <OrderList
+                        idTable={this.state.idTable}
+                        items={this.state.activeOrders}
                     />)}
                 />
                 <Route path="/menu" exact render={() => (

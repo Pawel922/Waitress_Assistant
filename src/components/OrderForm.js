@@ -1,10 +1,12 @@
 import React from 'react';
+import {Link, Redirect} from 'react-router-dom';
 
 class OrderForm extends React.Component {
     state ={
         orders: [],
         selectedDish: this.props.items[0],
         typedQuantity: 1,
+        orderFinished: false,
     }
 
     showMenu = () => {
@@ -58,26 +60,37 @@ class OrderForm extends React.Component {
         })
     }
 
-    render() {
-        return (
-            <form>
-                <label>
-                    Dish:
-                    {this.showMenu()}
-                </label>
-                <label>
-                    Quantity: 
-                    <input type="number" value={`${this.state.typedQuantity}`} min="1" step="1" onChange={this.handleInputChange}/>
-                </label>
-                <button onClick={this.addDishToOrder}>Add</button>
-                <br/>
-                {this.state.orders.length === 0 ? null : this.showOrderList()}
-                <button>Back</button>
-                <button>Done</button>
-            </form>
-        )
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.addOrders(this.state.orders);
+        this.setState({
+            orderFinished: true
+        })
     }
 
+    render() {
+        if(this.state.orderFinished) {
+            return <Redirect to="/"/>
+        } else {
+            return (
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Dish:
+                        {this.showMenu()}
+                    </label>
+                    <label>
+                        Quantity: 
+                        <input type="number" value={`${this.state.typedQuantity}`} min="1" step="1" onChange={this.handleInputChange}/>
+                    </label>
+                    <button onClick={this.addDishToOrder}>Add</button>
+                    <br/>
+                    {this.state.orders.length === 0 ? null : this.showOrderList()}
+                    <Link to="/"><button>Back</button></Link>
+                    {this.state.orders.length === 0 ? null : <button type="submit">Done</button>}
+                </form>
+            )
+        }
+    }
 }
 
 export default OrderForm

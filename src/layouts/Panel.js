@@ -25,6 +25,7 @@ class Panel extends React.Component {
             name: 'Filet z mintaja',
             price: 12.5,
         }],
+        activeOrders: [],
         nextAvailableId : 3,
         idToEdit: null,
         idToDelete: null,
@@ -86,6 +87,14 @@ class Panel extends React.Component {
         })
     }
 
+    addOrders = (orders) => {
+        const currentOrders = [...this.state.activeOrders];
+        const newOrders = [...currentOrders, ...orders];
+        this.setState({
+            activeOrders: newOrders
+        })
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -98,6 +107,7 @@ class Panel extends React.Component {
                     <OrderForm
                         idTable={this.state.idTable}
                         items={this.state.items}
+                        addOrders={this.addOrders}
                     />)}
                 />
                 <Route path="/menu" exact render={() => (

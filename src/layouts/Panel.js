@@ -96,7 +96,7 @@ class Panel extends React.Component {
                 />
                 <Route path="/order" render={() => (
                     <OrderForm
-                        id={this.state.idTable}
+                        idTable={this.state.idTable}
                         items={this.state.items}
                     />)}
                 />

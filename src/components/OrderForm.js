@@ -19,7 +19,7 @@ class OrderForm extends React.Component {
         return (
             <div className="orderList">
                 <h1>Order:</h1>
-                {this.state.orders.map(order => <p><span>{order.name}</span><span>{order.quantity}</span></p>)}
+                {this.state.orders.map((order, index) => <p key={index}><span>{order.name}</span><span>{order.quantity}</span></p>)}
             </div>
         )
     }
@@ -43,10 +43,16 @@ class OrderForm extends React.Component {
         const dishToAdd = {
             id: this.state.selectedDish.id,
             name: this.state.selectedDish.name,
-            quantity: this.state.typedQuantity
+            quantity: this.state.typedQuantity,
+            idTable: this.props.idTable,
         }
         const tempArray = this.state.orders;
-        tempArray.push(dishToAdd);
+        const index = tempArray.findIndex((elem) => elem.id === dishToAdd.id);
+        if(index !== -1) {
+            tempArray[index].quantity += dishToAdd.quantity;
+        } else {
+            tempArray.push(dishToAdd);
+        }
         this.setState({
             orders: tempArray,
         })
@@ -68,7 +74,6 @@ class OrderForm extends React.Component {
                 {this.state.orders.length === 0 ? null : this.showOrderList()}
                 <button>Back</button>
                 <button>Done</button>
-
             </form>
         )
     }

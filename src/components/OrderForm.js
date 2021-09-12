@@ -21,9 +21,19 @@ class OrderForm extends React.Component {
         return (
             <div className="orderList">
                 <h1>Order:</h1>
-                {this.state.orders.map((order, index) => <p key={index}><span>{order.name}</span><span>{order.quantity}</span></p>)}
+                {this.state.orders.map((order, index) => <p key={index}><span>{order.name}</span><span>{order.quantity}</span><button onClick={(event) => this.cancelOrder(event, index)}>Cancel</button></p>)}
             </div>
         )
+    }
+
+    cancelOrder = (event, index) => {
+        event.preventDefault();
+        const tempArray = [...this.state.orders];
+        tempArray.splice(index, 1);
+        this.setState({
+            orders: tempArray
+        })
+
     }
 
     handleSelectChange = (event) => {

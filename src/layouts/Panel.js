@@ -156,7 +156,6 @@ class Panel extends React.Component {
                         setIdToDelete={this.setIdToDelete}
                     />)}
                 />
-                <Route path="/summary" component={Summary}/>
                 <Route path="/menu/delete" render={() => (
                     <DeleteConfirm 
                         id={this.state.idToDelete} 
@@ -175,6 +174,11 @@ class Panel extends React.Component {
                         type="edit"
                         item={[...[...this.state.items].filter(item => item.id === this.state.idToEdit)][0]}
                         edit={this.editItem}
+                    />
+                )}/>
+                <Route path="/summary" render={() => (
+                    <Summary
+                        items={this.state.completedOrders}
                     />
                 )}/>
             </React.Fragment>

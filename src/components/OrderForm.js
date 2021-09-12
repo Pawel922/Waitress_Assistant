@@ -55,6 +55,7 @@ class OrderForm extends React.Component {
         const dishToAdd = {
             id: this.state.selectedDish.id,
             name: this.state.selectedDish.name,
+            price: this.state.selectedDish.price,
             quantity: this.state.typedQuantity,
             idTable: this.props.idTable,
         }

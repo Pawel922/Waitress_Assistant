@@ -13,7 +13,14 @@ const Tables = (props) => {
     const createTableList = () => {
         const tables = [];
         for(let i = 1; i <= numOfTables; i++) {
-            tables.push(<Table key={i} id={i} setIdTable={props.setIdTable} ordersExists={activeOrdersExists(props.activeOrders, i)}/>)
+            tables.push(
+            <Table 
+                key={i} 
+                id={i} 
+                setIdTable={props.setIdTable} 
+                ordersExists={activeOrdersExists(props.activeOrders, i)}
+                completeOrders={props.completeOrders}
+            />)
         }
         return tables;
     }

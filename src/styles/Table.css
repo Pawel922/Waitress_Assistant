@@ -6,14 +6,20 @@
     border-radius: 25px;
     margin: 10px;
     border: 2px solid black;
-    background-color: rgb(207, 159, 96);
+}
+
+.free {
+    background-color: rgba(112, 155, 12, 0.7);
+}
+
+.taken {
+    background-color: rgba(238, 17, 17, 0.7);
 }
 
 .table h1 {
     font-size: 1rem;
     text-align: center;
-    color: rgb(75, 73, 73);
-
+    color: white;
 }
 
 .table div.picture {

@@ -27,6 +27,7 @@ class Panel extends React.Component {
             price: 12.5,
         }],
         activeOrders: [],
+        completedOrders: [],
         nextAvailableId : 3,
         idToEdit: null,
         idToDelete: null,
@@ -110,6 +111,21 @@ class Panel extends React.Component {
         })
     }
 
+    completeOrders = (id) => {
+        const currentOrders = [...this.state.activeOrders];
+        const currentCompletedOrders = [...this.state.completedOrders];
+        const ordersToComplete = currentOrders.filter(order => order.idTable === id);
+        currentOrders.forEach((order, index, array) => {
+            if(order.idTable === id) {
+                array.splice(index, 1)
+            }
+        })
+        this.setState({
+            activeOrders: currentOrders,
+            completedOrders: [...currentCompletedOrders, ...ordersToComplete]
+        })
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -117,6 +133,7 @@ class Panel extends React.Component {
                     <Tables
                         activeOrders={this.state.activeOrders}
                         setIdTable={this.setIdTable}
+                        completeOrders={this.completeOrders}
                     />)}
                 />
                 <Route path="/order" exact render={() => (

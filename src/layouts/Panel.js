@@ -75,16 +75,30 @@ class Panel extends React.Component {
     }
 
     editItem = (item) => {
-        const tempArray = [...this.state.items];
-        const itemToEdit = [...tempArray.filter(elem => elem.id === this.state.idToEdit)][0];
-        const index = tempArray.indexOf(itemToEdit);
-        tempArray[index] = {
+        const curentMenu = [...this.state.items];
+        const itemToEdit = [...curentMenu.filter(elem => elem.id === this.state.idToEdit)][0];
+        const index = curentMenu.indexOf(itemToEdit);
+        curentMenu[index] = {
             id: this.state.idToEdit,
             name: item.name,
             price: item.price,
         }
+
+        const currentOrders = [...this.state.activeOrders];
+        currentOrders.forEach((elem, index, array) => {
+            if(elem.id === this.state.idToEdit) {
+                return array[index] = {
+                    id: this.state.idToEdit,
+                    name: item.name,
+                    price: item.price,
+                    quantity: elem.quantity,
+                    idTable: elem.idTable,
+                }
+            }
+        })
         this.setState({
-            items: tempArray,
+            items: curentMenu,
+            activeOrders: currentOrders,
         })
     }
 

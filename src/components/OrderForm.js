@@ -22,7 +22,21 @@ class OrderForm extends React.Component {
         return (
             <div className="orderList">
                 <h1>Order:</h1>
-                {this.state.orders.map((order, index) => <p key={index}><span>{order.name}</span><span>{order.quantity}</span><button onClick={(event) => this.cancelOrder(event, index)}>Cancel</button></p>)}
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                    {this.state.orders.map((order, index) => 
+                        <tr key={index}>
+                            <td>{order.name}</td>
+                            <td>{order.quantity}</td>
+                            <td><button onClick={(event) => this.cancelOrder(event, index)}>Cancel</button></td>
+                        </tr>
+                    )}
+                </table>
+                
             </div>
         )
     }
@@ -97,7 +111,6 @@ class OrderForm extends React.Component {
                         </label>
                         <button onClick={this.addDishToOrder}>Add</button>
                         <br/>
-                        
                         <Link to="/"><button>Back</button></Link>
                         {this.state.orders.length === 0 ? null : <button type="submit">Done</button>}
                     </form>

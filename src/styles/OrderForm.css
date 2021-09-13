@@ -37,3 +37,46 @@
 .orderForm form a button {
     height: 100%;
 }
+
+.orderList h1 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.orderList table {
+    width: 50%;
+    font-size: 0.8rem;
+    background-color: rgba(252, 247, 247, 0.5);
+}
+
+.orderList table,
+th,
+td {
+    border: 2px solid rgb(77, 14, 14);
+    border-collapse: collapse;
+}
+
+.orderList table tr:nth-child(1) th:nth-child(2) {
+    width: 15%;
+}
+
+.orderList table tr:nth-child(1) th:nth-child(3) {
+    width: 15%;
+}
+
+.orderList table td:nth-child(1) {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.orderList table td:nth-child(2) {
+    text-align: center
+}
+
+.orderList table td:nth-child(3) {
+    text-align: center
+}
+
+.orderList table td:nth-child(3) button {
+    width: 80%;
+}

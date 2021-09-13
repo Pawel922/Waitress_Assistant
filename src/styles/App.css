@@ -35,7 +35,7 @@ main {
 }
 
 main .navigation {
-    flex-basis: 10%;
+    flex-basis: 50px;
     display: flex;
     align-items: center;
     justify-content: center;

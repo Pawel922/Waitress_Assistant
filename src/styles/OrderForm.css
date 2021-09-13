@@ -1,0 +1,39 @@
+.orderForm {
+    margin: 10px;
+    font-size: 1rem;
+}
+
+.orderForm form {
+    display: flex;
+}
+
+
+.orderForm form label {
+    display: flex;
+}
+
+.orderForm form label select {
+    margin: 0 20px 0 5px;
+}
+
+.orderForm form label input {
+    width: 50px;
+    margin: 0 20px 0 5px;
+    text-align: center;
+}
+
+.orderForm form button {
+    width: 50px;
+    margin: 0 5px 0 5px;
+}
+
+.orderForm form a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.orderForm form a button {
+    height: 100%;
+}

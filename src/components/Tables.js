@@ -4,7 +4,7 @@ import '../styles/Tables.css';
 
 const Tables = (props) => {
 
-    const numOfTables = 4; 
+    const numOfTables = 10; 
 
     const activeOrdersExists = (orders,id) => {
         return orders.findIndex(order => order.idTable === id) > -1 ? true : false;

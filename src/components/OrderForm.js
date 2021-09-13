@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, Redirect} from 'react-router-dom';
+import '../styles/OrderForm.css';
 
 class OrderForm extends React.Component {
     state ={
@@ -84,21 +85,24 @@ class OrderForm extends React.Component {
             return <Redirect to="/"/>
         } else {
             return (
-                <form onSubmit={this.handleSubmit}>
-                    <label>
-                        Dish:
-                        {this.showMenu()}
-                    </label>
-                    <label>
-                        Quantity: 
-                        <input type="number" value={`${this.state.typedQuantity}`} min="1" step="1" onChange={this.handleInputChange}/>
-                    </label>
-                    <button onClick={this.addDishToOrder}>Add</button>
-                    <br/>
+                <div className="orderForm">
+                    <form onSubmit={this.handleSubmit}>
+                        <label>
+                            Dish:
+                            {this.showMenu()}
+                        </label>
+                        <label>
+                            Quantity: 
+                            <input type="number" value={`${this.state.typedQuantity}`} min="1" step="1" onChange={this.handleInputChange}/>
+                        </label>
+                        <button onClick={this.addDishToOrder}>Add</button>
+                        <br/>
+                        
+                        <Link to="/"><button>Back</button></Link>
+                        {this.state.orders.length === 0 ? null : <button type="submit">Done</button>}
+                    </form>
                     {this.state.orders.length === 0 ? null : this.showOrderList()}
-                    <Link to="/"><button>Back</button></Link>
-                    {this.state.orders.length === 0 ? null : <button type="submit">Done</button>}
-                </form>
+                </div>
             )
         }
     }

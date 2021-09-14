@@ -18,12 +18,12 @@ const Menu = (props) => {
 
     return (
         
-        <React.Fragment>
+        <div className="menu">
             <ul className="listItems">
                 {listItems}
             </ul>
             <Link to="/menu/add"><button>Add</button></Link>
-        </React.Fragment>
+        </div>
 
     );
 }

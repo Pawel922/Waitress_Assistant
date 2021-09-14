@@ -28,10 +28,7 @@
 }
 
 .orderForm form a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+    font-size: 0;
 }
 
 .orderForm form a button {
@@ -74,6 +71,7 @@ td {
 }
 
 .orderList table td:nth-child(3) {
+    font-size: 0;
     text-align: center
 }
 

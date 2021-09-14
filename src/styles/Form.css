@@ -1,0 +1,35 @@
+.addEditForm form {
+    margin: 20px 0 0 20px;
+}
+
+.addEditForm form label {
+    display: block;
+    position: relative;
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.addEditForm form label input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    padding: 5px
+}
+
+.addEditForm form label:nth-child(2) input {
+    width: 20%;
+    text-align: center;
+}
+
+.addEditForm a {
+    font-size: 0;
+}
+
+.addEditForm button {
+    height: 35px;
+    width: 50px;
+    margin-top: 20px;
+    margin-right: 10px;
+}

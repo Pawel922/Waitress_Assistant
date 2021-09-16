@@ -1,0 +1,48 @@
+.orderTable {
+    margin: 10px;
+    font-size: 1rem;
+}
+
+.orderTable h1 {
+    font-size: 1.2rem;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.orderTable table {
+    width: 50%;
+    font-size: 0.8rem;
+    background-color: rgba(252, 247, 247, 0.5);
+}
+
+.orderTable table,
+th,
+td {
+    border: 2px solid rgb(77, 14, 14);
+    border-collapse: collapse;
+}
+
+.orderTable table tr:nth-child(1) th:nth-child(2) {
+    width: 15%;
+}
+
+
+.orderTable table td:nth-child(1) {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.orderTable table td:nth-child(2) {
+    text-align: center
+}
+
+.orderTable button {
+    height: 35px;
+    width: 50px;
+    margin-top: 10px;
+}
+
+.orderTable a {
+    font-size: 0;
+}

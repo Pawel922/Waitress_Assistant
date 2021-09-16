@@ -82,14 +82,14 @@ class Form extends React.Component {
                 <div className="addEditForm">
                     <form onSubmit={this.handleSubmit}>
                         <label>
-                            Name:
+                            Name
                             <input 
                                 type="text" 
                                 name="name" 
                                 value={this.state.name} 
                                 onChange={this.handleInputChange}
                             />
-                            {!this.state.errors.name && <span>{this.messages.name_incorrect}</span>}
+                            {!this.state.errors.name && <span className="errors">{this.messages.name_incorrect}</span>}
                         </label>
                         <label>
                             Price [$]
@@ -101,7 +101,7 @@ class Form extends React.Component {
                                 value={this.state.price} 
                                 onChange={this.handleInputChange}
                             />
-                            {!this.state.errors.price && <span>{this.messages.price_incorrect}</span>}
+                            {!this.state.errors.price && <span className="errors">{this.messages.price_incorrect}</span>}
                         </label>
                         <Link to="/menu"><button>Back</button></Link>
                         <button type="submit">{this.props.type === "add" ? "Add" : "Edit"}</button>

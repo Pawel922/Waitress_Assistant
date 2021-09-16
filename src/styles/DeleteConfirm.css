@@ -1,0 +1,14 @@
+.deleteConfirm {
+    margin: 20px 0 0 20px;
+}
+
+.deleteConfirm a {
+    font-size: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.deleteConfirm a button {
+    height: 35px;
+    width: 50px;
+}

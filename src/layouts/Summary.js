@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const Summary = (props) => {
 
@@ -37,9 +38,23 @@ const Summary = (props) => {
     const showIncomes = () => {
         const list = prepareData();
         return (
-            list.map((elem,index) => (
-                <p key={index}><span>{elem.name} </span><span>{elem.totalQuantity} </span><span>{elem.income}</span></p>
-            ))
+            <div>
+            <h1>Summary</h1>
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                    <th>Income [$]</th>
+                </tr>
+                {list.map(elem => (
+                    <tr>
+                        <td>{elem.name} </td>
+                        <td>{elem.totalQuantity}</td>
+                        <td>{elem.income}</td>
+                    </tr>))}
+            </table>
+            <Link to="/"><button>Back</button></Link>
+        </div>   
         )
     }
 

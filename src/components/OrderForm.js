@@ -20,7 +20,7 @@ class OrderForm extends React.Component {
 
     showOrderList = () => {
         return (
-            <div className="orderList">
+            <div>
                 <h1>Order:</h1>
                 <table>
                     <tr>

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 15%;
+    flex-basis: 15%;
     border-radius: 25px;
     margin: 10px;
     border: 2px solid black;
@@ -25,6 +25,7 @@
 
 .table div.picture {
     width: 100%;
+    height: 25%;
     height: 100px;
     background-image: url("../images/table.jpg");
     background-position: center;
@@ -32,12 +33,13 @@
     background-size: contain;
 }
 
-.table a {
+.panel .table a {
     font-size: 0;
     margin: 5px 0;
     width: 80%;
 }
 
-.table a button {
+.panel .table a button {
     width: 100%;
+    height: 20px;
 }

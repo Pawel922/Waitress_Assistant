@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import '../styles/OrderList.css';
 
 const OrderList = (props) => {
 
@@ -11,8 +10,8 @@ const OrderList = (props) => {
     }
 
     return (
-        <div className="orderTable">
-            <h1>Order for <strong>Table {props.idTable}</strong></h1>
+        <div>
+            <h1>Order for Table {props.idTable}</h1>
             <table>
                 <tr>
                     <th>Name</th>

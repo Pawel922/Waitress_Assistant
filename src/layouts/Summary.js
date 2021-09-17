@@ -3,10 +3,10 @@ import {Link} from 'react-router-dom';
 
 const Summary = (props) => {
 
-    const prepareData = () => {
+    const prepareData = (type) => {
         const idList = [];
         const aggregateList = [];
-        const resultList = [];
+        let resultList = [];
         props.items.forEach(item => {
             if(!idList.includes(item.id)) {
                 idList.push(item.id);
@@ -32,11 +32,17 @@ const Summary = (props) => {
                income: elem[0].price * totalQuantity,
            })
        })
+
+       if(type === "byQuantity") {
+           resultList = resultList.sort((a,b) => {return (b.totalQuantity - a.totalQuantity)})
+       } else if (type === "byIncome") {
+           resultList = resultList.sort((a,b) => {return (b.income - a.income)})
+       }
        return resultList;
     }
 
     const showIncomes = () => {
-        const list = prepareData();
+        const list = prepareData("byQuantity");
         return (
             <div>
             <h1>Summary</h1>

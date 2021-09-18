@@ -1,0 +1,27 @@
+.selection {
+    position: relative;
+    width: 50%;
+}
+
+.selection p {
+    display: inline-block;
+
+}
+
+.panel .selection button {
+    width: 65px;
+    margin: 0;
+}
+
+.panel .selection button:nth-of-type(1) {
+    position: absolute;
+    top: 0;
+    left: 65%;
+
+}
+
+.panel .selection button:nth-of-type(2) {
+    position: absolute;
+    top: 0;
+    left: 80%;
+}

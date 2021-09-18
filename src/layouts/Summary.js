@@ -1,20 +1,32 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import '../styles/Summary.css';
 
-const Summary = (props) => {
+class Summary extends React.Component {
 
-    const prepareData = (type) => {
+    state={
+        sortBy: "quantity"
+    };
+
+    handleClick = () => {
+        const prevState = this.state.sortBy;
+        this.setState({
+            sortBy: prevState === "quantity" ? "income" : "quantity"
+        })
+    }
+
+    prepareData = (type) => {
         const idList = [];
         const aggregateList = [];
         let resultList = [];
-        props.items.forEach(item => {
+        this.props.items.forEach(item => {
             if(!idList.includes(item.id)) {
                 idList.push(item.id);
             }
         });
         
        idList.forEach(id => {
-           aggregateList.push(props.items.filter(item => item.id === id));
+           aggregateList.push(this.props.items.filter(item => item.id === id));
        })
 
        aggregateList.forEach(elem => {
@@ -33,40 +45,47 @@ const Summary = (props) => {
            })
        })
 
-       if(type === "byQuantity") {
+       if(type === "quantity") {
            resultList = resultList.sort((a,b) => {return (b.totalQuantity - a.totalQuantity)})
-       } else if (type === "byIncome") {
+       } else if (type === "income") {
            resultList = resultList.sort((a,b) => {return (b.income - a.income)})
        }
        return resultList;
     }
 
-    const showIncomes = () => {
-        const list = prepareData("byQuantity");
+    showIncomes = () => {
+        const list = this.prepareData(this.state.sortBy);
         return (
             <div>
-            <h1>Summary</h1>
-            <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Quantity</th>
-                    <th>Income [$]</th>
-                </tr>
-                {list.map(elem => (
+                <h1>Summary</h1>
+                <div className="selection">
+                    <p>sort by:</p> 
+                    <button onClick={this.handleClick} disabled={this.state.sortBy === "quantity"}>quantity</button>
+                    <button onClick={this.handleClick} disabled={this.state.sortBy === "income"}>income</button>
+                </div>
+                <table>
                     <tr>
-                        <td>{elem.name} </td>
-                        <td>{elem.totalQuantity}</td>
-                        <td>{elem.income}</td>
-                    </tr>))}
-            </table>
-            <Link to="/"><button>Back</button></Link>
-        </div>   
+                        <th>Name</th>
+                        <th>Quantity</th>
+                        <th>Income [$]</th>
+                    </tr>
+                    {list.map(elem => (
+                        <tr>
+                            <td>{elem.name} </td>
+                            <td>{elem.totalQuantity}</td>
+                            <td>{elem.income}</td>
+                        </tr>))}
+                </table>
+                <Link to="/"><button>Back</button></Link>
+            </div>   
         )
     }
 
-    return (
-        <div>{showIncomes()}</div>
-    )
+    render() {
+        return (
+            <div>{this.showIncomes()}</div>
+        )
+    }
 }
 
 export default Summary

@@ -13,11 +13,13 @@ const OrderList = (props) => {
         <div>
             <h1>Order for Table {props.idTable}</h1>
             <table>
-                <tr>
-                    <th>Name</th>
-                    <th>Quantity</th>
-                 </tr>
-                {createOrderList()}
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <th>Quantity</th>
+                    </tr>
+                    {createOrderList()}
+                </tbody>
             </table>
             <Link to="/"><button>Back</button></Link>
         </div>

@@ -23,20 +23,21 @@ class OrderForm extends React.Component {
             <div>
                 <h1>Order:</h1>
                 <table>
-                    <tr>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                        <th>Action</th>
-                    </tr>
-                    {this.state.orders.map((order, index) => 
-                        <tr key={index}>
-                            <td>{order.name}</td>
-                            <td>{order.quantity}</td>
-                            <td><button onClick={(event) => this.cancelOrder(event, index)}>Cancel</button></td>
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Action</th>
                         </tr>
-                    )}
+                        {this.state.orders.map((order, index) => 
+                            <tr key={index}>
+                                <td>{order.name}</td>
+                                <td>{order.quantity}</td>
+                                <td><button onClick={(event) => this.cancelOrder(event, index)}>Cancel</button></td>
+                            </tr>
+                        )}
+                    </tbody>
                 </table>
-                
             </div>
         )
     }

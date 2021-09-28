@@ -64,18 +64,20 @@ class Summary extends React.Component {
                     <button onClick={this.handleClick} disabled={this.state.sortBy === "income"}>income</button>
                 </div>
                 <table>
-                    <tr>
-                        <th>Name</th>
-                        <th>Quantity</th>
-                        <th>Income [$]</th>
-                    </tr>
-                    {list.map(elem => (
+                    <tbody>
                         <tr>
-                            <td>{elem.name} </td>
-                            <td>{elem.totalQuantity}</td>
-                            <td>{elem.income}</td>
+                            <th>Name</th>
+                            <th>Quantity</th>
+                            <th>Income [$]</th>
                         </tr>
-                    ))}
+                        {list.map((elem,index) => (
+                            <tr key={index}>
+                                <td>{elem.name} </td>
+                                <td>{elem.totalQuantity}</td>
+                                <td>{elem.income}</td>
+                            </tr>
+                        ))}
+                    </tbody>
                 </table>
                 <Link to="/"><button>Back</button></Link>
             </div>   

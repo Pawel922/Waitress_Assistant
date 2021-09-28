@@ -20,6 +20,7 @@ const Tables = (props) => {
                 setIdTable={props.setIdTable} 
                 ordersExists={activeOrdersExists(props.activeOrders, i)}
                 completeOrders={props.completeOrders}
+                orderPossible={props.orderPossible}
             />)
         }
         return tables;

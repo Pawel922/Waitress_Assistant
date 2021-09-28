@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link } from 'react-router-dom';
+import {Link, Prompt} from 'react-router-dom';
 import ListItem from '../components/ListItem';
 import '../styles/Menu.css';
 
@@ -22,7 +22,14 @@ const Menu = (props) => {
             <ul className="listItems">
                 {listItems}
             </ul>
+            {listItems.length === 0 
+                ? <p>You do not have any menu's items. Taking order is not possible.</p> 
+                : null}
             <Link to="/menu/add"><button>Add</button></Link>
+            <Prompt
+                when={listItems.length === 0}
+                message={() => props.setOrderPossible()}
+            />
         </div>
 
     );

@@ -9,7 +9,12 @@ const Table = (props) => {
             <h1>{`Table ${props.id}`}</h1>
             <div className="picture"/>
             <Link to="/order">
-                <button onClick={() => props.setIdTable(props.id)} disabled={props.ordersExists}>Take order</button>
+                <button 
+                    onClick={() => props.setIdTable(props.id)} 
+                    disabled={props.ordersExists || !props.orderPossible}
+                >
+                    Take order
+                </button>
             </Link>
             <Link to="/order/list">
                 <button disabled={!props.ordersExists} onClick={() => props.setIdTable(props.id)}>Show order</button>

@@ -74,7 +74,8 @@ class Summary extends React.Component {
                             <td>{elem.name} </td>
                             <td>{elem.totalQuantity}</td>
                             <td>{elem.income}</td>
-                        </tr>))}
+                        </tr>
+                    ))}
                 </table>
                 <Link to="/"><button>Back</button></Link>
             </div>   

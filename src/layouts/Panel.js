@@ -28,10 +28,11 @@ class Panel extends React.Component {
         }],
         activeOrders: [],
         completedOrders: [],
-        nextAvailableId : 3,
         idToEdit: null,
         idToDelete: null,
         idTable:null,
+        nextAvailableId : 3,
+        orderPossible: true,
     }
 
     setIdToEdit = (id) => {
@@ -126,6 +127,10 @@ class Panel extends React.Component {
         })
     }
 
+    setOrderPossible = () => {
+        this.setState(prevState => ({orderPossible: !prevState.orderPossible}))
+    }
+
     render() {
         return (
             <React.Fragment>
@@ -134,6 +139,7 @@ class Panel extends React.Component {
                         activeOrders={this.state.activeOrders}
                         setIdTable={this.setIdTable}
                         completeOrders={this.completeOrders}
+                        orderPossible={this.state.orderPossible}
                     />)}
                 />
                 <Route path="/order" exact render={() => (
@@ -154,6 +160,7 @@ class Panel extends React.Component {
                         items={this.state.items}
                         setIdToEdit={this.setIdToEdit}
                         setIdToDelete={this.setIdToDelete}
+                        setOrderPossible={this.setOrderPossible}
                     />)}
                 />
                 <Route path="/menu/delete" render={() => (

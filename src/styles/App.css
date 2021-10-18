@@ -65,7 +65,7 @@ main .navigation {
 }
 
 .panel table {
-    width: 50%;
+    width: 100%;
     margin-bottom: 10px;
     font-size: 0.8rem;
     background-color: rgba(252, 247, 247, 0.5);

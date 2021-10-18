@@ -21,7 +21,6 @@ class OrderForm extends React.Component {
     showOrderList = () => {
         return (
             <div>
-                <h1>Order:</h1>
                 <table>
                     <tbody>
                         <tr>
@@ -115,6 +114,7 @@ class OrderForm extends React.Component {
                         <Link to="/"><button>Back</button></Link>
                         {this.state.orders.length === 0 ? null : <button type="submit">Done</button>}
                     </form>
+                    <h1>Order:</h1>
                     {this.state.orders.length === 0 ? null : this.showOrderList()}
                 </div>
             )

@@ -59,26 +59,28 @@ class Summary extends React.Component {
             <div>
                 <h1>Summary</h1>
                 <div className="selection">
-                    <p>sort by:</p> 
+                    <p>sorted by:</p> 
                     <button onClick={this.handleClick} disabled={this.state.sortBy === "quantity"}>quantity</button>
                     <button onClick={this.handleClick} disabled={this.state.sortBy === "income"}>income</button>
                 </div>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th>Name</th>
-                            <th>Quantity</th>
-                            <th>Income [$]</th>
-                        </tr>
-                        {list.map((elem,index) => (
-                            <tr key={index}>
-                                <td>{elem.name} </td>
-                                <td>{elem.totalQuantity}</td>
-                                <td>{elem.income}</td>
+                <div className="summary">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Name</th>
+                                <th>Quantity</th>
+                                <th>Income [$]</th>
                             </tr>
-                        ))}
-                    </tbody>
-                </table>
+                            {list.map((elem,index) => (
+                                <tr key={index}>
+                                    <td>{elem.name} </td>
+                                    <td>{elem.totalQuantity}</td>
+                                    <td>{elem.income}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
                 <Link to="/"><button>Back</button></Link>
             </div>   
         )

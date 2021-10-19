@@ -25,3 +25,9 @@
     top: 0;
     left: 80%;
 }
+
+.summary {
+    width: 70%;
+    max-height: 50vh;
+    overflow-y: auto;
+}

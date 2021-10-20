@@ -49,3 +49,9 @@
         height: 75px;
     }
 }
+
+@media(orientation: portrait) and (min-width: 740px) {
+    .table {
+        flex-basis: 20%;
+    }
+}

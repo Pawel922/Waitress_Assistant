@@ -1,6 +1,6 @@
 .selection {
     position: relative;
-    width: 70%;
+    width: 100%;
 }
 
 .selection p {
@@ -27,7 +27,7 @@
 }
 
 .summary {
-    width: 70%;
-    max-height: 50vh;
+    width: 100%;
+    max-height: 70vh;
     overflow-y: auto;
 }

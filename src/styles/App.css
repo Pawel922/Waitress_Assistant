@@ -113,3 +113,21 @@ footer {
     border-top: 4px solid rgb(77, 14, 14);
     color: rgb(77, 14, 14);
 }
+
+@media(orientation: portrait) and (min-width: 740px) {
+    header {
+        flex-basis: 7%;
+        font-size: 1.5rem;
+    }
+
+    header,
+    footer {
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+    }
+
+    main .navigation {
+        border-left: 80px solid transparent;
+        border-right: 80px solid transparent;
+    }
+}

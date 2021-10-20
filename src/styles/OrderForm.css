@@ -17,7 +17,7 @@
 }
 
 .orderForm div:nth-of-type(1) {
-    width: 70%;
-    max-height: 50vh;
+    width: 100%;
+    max-height: 70vh;
     overflow-y: auto;
 }

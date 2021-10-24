@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "ccb93bcc0904872d827d",
+    "revision": "b33104d257cd25386a37",
     "url": "/Waitress_Assistant/static/css/main.edba22a2.chunk.css"
   },
   {
-    "revision": "ccb93bcc0904872d827d",
-    "url": "/Waitress_Assistant/static/js/main.bbb15f51.chunk.js"
+    "revision": "b33104d257cd25386a37",
+    "url": "/Waitress_Assistant/static/js/main.a6b68442.chunk.js"
   },
   {
     "revision": "9d1d66734186b5e864d5",
@@ -24,7 +24,7 @@ self.__precacheManifest = [
     "url": "/Waitress_Assistant/static/media/table.e8eb29bf.jpg"
   },
   {
-    "revision": "737d36704abc86410dbd4037dd290667",
+    "revision": "5111958ae8fbdbc4ac1fee96ab2f232a",
     "url": "/Waitress_Assistant/index.html"
   }
 ];

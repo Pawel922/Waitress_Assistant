@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/Waitress_Assistant/precache-manifest.d10410fc614c012083e8604279138501.js"
+  "/Waitress_Assistant/precache-manifest.68f9ab2cf8fb96de27ab066572ab14ba.js"
 );
 
 workbox.clientsClaim();
